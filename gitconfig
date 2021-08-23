@@ -1,5 +1,6 @@
 [user]
     name = Jose Delarosa
+	email = jose.e.delarosa@gmail.com
 
 [alias]
     ci = commit
