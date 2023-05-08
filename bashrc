@@ -5,12 +5,10 @@ test -z "$PROFILEREAD" && . /etc/profile
 alias c='clear'
 alias d='docker'
 [ -f /etc/redhat-release ] && alias f='firewall-cmd'
-alias g='/opt/dlr/bin/links/go'
 alias h='history | grep -i'
 [ -f /etc/SuSE-release ] && alias l='ls -lF --ignore=.*' || alias l='ls -l --color'
 alias k='kubectl'
 alias m='less'
-alias o='openstack'
 alias pm='podman'
 alias p='ps -ef | grep -i'
 alias r='rpm -qa | grep -i'
@@ -73,10 +71,10 @@ prompt_symbol() {
 if [ -f /etc/redhat-release ] ; then
     if grep -q 'Red Hat' /etc/redhat-release ; then
         # red
-        PS1="\[\033[38;2;238;0;0m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(prompt_symbol) "
+        PS1="\[\033[38;2;255;102;102m\]\u@\h\[\033[00m\]:\[\033[29m\]\w\[\033[00m\]$(prompt_symbol) "
     elif grep -q 'Fedora' /etc/redhat-release ; then
         # blue
-        PS1="\[\033[38;2;0;133;195m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(prompt_symbol) "
+        PS1="\[\033[1;37;44m\]\u@\h\[\033[00m\]:\[\033[29m\]\w\[\033[00m\]$(prompt_symbol) "
     else
         # white (CentOS and others)
         PS1="\[\033[38;2;0;0;0m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(prompt_symbol) "
