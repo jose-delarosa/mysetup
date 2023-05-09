@@ -13,7 +13,6 @@ alias pm='podman'
 alias p='ps -ef | grep -i'
 alias r='rpm -qa | grep -i'
 alias s='systemctl'
-alias t='timedatectl'
 alias v='vi'
 
 [ -x /usr/bin/ansible ] && alias ap='ansible-playbook'
@@ -31,7 +30,6 @@ alias ds='df -h | grep -v snap | grep ^/dev'
 alias lsoff='lsof -P -iTCP -sTCP:LISTEN'
 alias iftop='export NCURSES_NO_UTF8_ACS=1 && iftop $@'
 alias sd='sudo su -'
-[ -f /usr/bin/htop ] && alias top='htop'
 alias vi='vim'
 
 # lvm
@@ -40,7 +38,6 @@ alias vgs='vgs --units g'
 alias lvs='lvs --units g'
 
 # kubernetes
-[ -x /snap/bin/microk8s.kubectl ] && alias kubectl=microk8s.kubectl
 [ -x /usr/bin/kubectl ] && source <(kubectl completion bash)
 complete -F __start_kubectl k
 
@@ -49,9 +46,6 @@ alias gr='git remote show origin'
 alias gl1='git log --graph --decorate --pretty="format:%C(auto)%h %ad %C(green)%an %C(cyan)%s" --abbrev-commit'
 alias gl2='git log --graph --decorate --pretty=oneline --abbrev-commit'
 alias gl3='git log --graph --date=short --abbrev-commit --pretty=format:"%h %cd %an - %s"'
-
-PATH=/usr/sbin:/sbin:/usr/bin:/bin:/usr/local/bin:/usr/local/sbin:/snap/bin
-export PATH
 
 #────────
 # Colors
@@ -88,9 +82,6 @@ export PS1
 #──────────
 # The rest
 #──────────
-LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
-export LD_LIBRARY_PATH
-
 # The '&' suppresses duplicate entries.
 export HISTSIZE=10000
 export HISTTIMEFORMAT="%h/%d - %H:%M:%S "
